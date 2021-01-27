@@ -1,0 +1,25 @@
+-> todas os artigos de determinado reporter
+>>> Article.objects.filter(reporter__first_name='Kemoel')
+<QuerySet [<Article: Clima>]>
+
+-> todos os artigos de entre 2021
+>>> Article.objects.all().filter(pub_date__year=2021)
+<QuerySet [<Article: Clima>, <Article: Culinária>, <Article: Emprego>, <Article: Férias>, <Article: Musica>]>
+
+-> o reporter com mais artigos em 2020 
+
+ 
+
+-> artigos que contenham a palvra "Clima"
+ e tenham sido publicados 
+por determinado reporter em abril de 2021
+>>> Article.objects.filter(headline__startswith="Clima", pub_date__year='2021')
+<QuerySet [<Article: Clima>]>
+
+-> A quantidade de publicacoes que tenham 
+a letra "i"
+Publication.objects.filter(title__contains='i')
+<QuerySet [<Publication: Publicação 1>, <Publication: Publicação 10>, <Publication: Publicação 2>, <Publication: Publicação 3>, <Publication: Publicação 4>, <Publication: Publicação 5>, <Publication: Publicação 6>, <Publication: Publicação 7>, <Publication: Publicação 8>, <Publication: Publicação 9>]>
+ 
+
+-> A media de publicacoes por artigos
